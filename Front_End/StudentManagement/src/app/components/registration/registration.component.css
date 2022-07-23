@@ -1,0 +1,32 @@
+.bgImg{
+    background-image: linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,5));
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100vh;
+}
+
+.cardTransparent{
+    background-image: linear-gradient(rgba(0,0,0,5),rgba(0,0,0,0.7));
+}
+
+.w100{
+    width: 100%;
+}
+
+.m-p-0{
+    padding: 0;
+    margin: 0;
+}
+
+.title-center{
+    padding: 7px;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.bg-info{
+    border-radius: 8px;
+    box-shadow: 0.6px 0.6px 5px #4a4a4a;
+}

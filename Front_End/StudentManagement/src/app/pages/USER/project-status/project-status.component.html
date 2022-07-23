@@ -1,0 +1,114 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-12 col-lg-12">
+            <mat-card class="mt-4">
+                <div class="border-bottom">
+                    <mat-card-header>
+                        <h4>Project Title: {{project.projectTitle}}</h4>
+                    </mat-card-header>
+                </div>
+                <mat-card-content class="m-p-0">
+                    <div class="row p-2 m-p-0">
+                        <h6>Project Description</h6>
+                        <h6>{{project.projectDescription}}</h6>
+                    </div>
+                </mat-card-content>
+                <mat-card-footer class="m-p-0">
+                    <div class="row px-3">
+                        <div class="col-lg-6">
+                            <p>Project Starting Date: {{project.startDate}}</p>
+                        </div>
+                        <div class="col-lg-6 ml-auto">
+                            <p>Project Ending Date: {{project.endDate}}</p>
+                        </div>
+                    </div>
+                </mat-card-footer>
+            </mat-card>
+        </div>
+        <div class="col-12 col-lg-12">
+            <mat-card class="mt-4">
+                <div class="border-bottom">
+                    <mat-card-header>
+                        <h4>Project Files Information</h4>
+                    </mat-card-header>
+                </div>
+                <mat-card-content class="m-p-0">
+                    <div class="row p-2 m-p-0">
+                        <div class="col-lg-12">
+                            <mat-list>
+                                <div mat-subheader class="m-p-0">Folders</div>
+                                <mat-list-item *ngFor="let folder of folders">
+                                    <mat-icon mat-list-icon>folder</mat-icon>
+                                    <div class="col-lg-12 row border-bottom">
+                                        <div class="col-lg-6">
+                                            <div mat-line>{{folder.fileName}}</div>
+                                            <div mat-line> {{folder.date}} </div>
+                                        </div>
+                                        <div class="col-lg-6">
+                                            <h6>File Description: </h6>
+                                            <h6>{{folder.description}}</h6>
+                                        </div>
+                                    </div>
+                                </mat-list-item>
+                            </mat-list>
+                        </div>
+                    </div>
+                </mat-card-content>
+                <mat-card-footer class="m-3">
+                    <div class="row px-3">
+                        <div class="col-lg-6">
+                            <p>Project Starting Date: {{project.startDate}}</p>
+                        </div>
+                        <div class="col-lg-6 ml-auto">
+                            <p>Project Ending Date: {{project.endDate}}</p>
+                        </div>
+                    </div>
+                </mat-card-footer>
+            </mat-card>
+        </div>
+        <div class="col-12 col-lg-12">
+            <mat-card class="mt-4 mb-4">
+                <div class="border-bottom">
+                    <mat-card-header>
+                        <h4>Project Group Members</h4>
+                    </mat-card-header>
+                </div>
+                <mat-card-content class="m-p-0">
+                    <div class="row p-2 m-p-0">
+                        <table class="table table-bordered">
+                            <thead>
+                              <tr>
+                                <th scope="col">Member ID</th>
+                                <th scope="col">Name</th>
+                                <th scope="col">Contact</th>
+                                <th scope="col">PRN</th>
+                                <th scope="col">Email</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              <tr *ngFor="let member of student">
+                                <td>{{member.memberID}}</td>
+                                <td>{{member.memberName}}</td>
+                                <td>{{member.memberContact}}</td>
+                                <td>{{member.memberPRNNumber}}</td>
+                                <td>{{member.memberEmail}}</td>
+                              </tr>
+                            </tbody>
+                          </table>
+                          
+                    </div>
+                </mat-card-content>
+                <mat-card-footer class="m-p-0">
+                    <div class="row px-3">
+                        <div class="col-lg-6">
+                            <p>Project Starting Date: {{project.startDate}}</p>
+                        </div>
+                        <div class="col-lg-6 ml-auto">
+                            <p>Project Ending Date: {{project.endDate}}</p>
+                        </div>
+                    </div>
+                </mat-card-footer>
+            </mat-card>
+        </div>
+    </div>
+</div>

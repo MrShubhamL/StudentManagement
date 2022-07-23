@@ -1,0 +1,137 @@
+<div class="container-fluid">
+    <div class="col-12 col-lg-12">
+        <div class="row">
+            <div class="col-12 col-lg-12">
+                <mat-card class="mt-3">
+                    <div class="border-bottom p-2 bg-info-c">
+                        <mat-card-header class="text-white" style="padding: 0; margin: 0;">Add Project Details</mat-card-header>
+                    </div> 
+                    <mat-card-content>
+                        <form class="row g-3" (ngSubmit)="projectSubmit()" >
+                            <div class="col-12 col-lg-6">
+                                <mat-form-field class="w100" appearance="outline">
+                                    <mat-label>Project Title</mat-label>
+                                    <input [(ngModel)]="project.projectTitle" name="projectTitle"
+                                     matInput placeholder="Enter project title" required>
+                                    <mat-hint>Project Name</mat-hint>
+                                </mat-form-field>
+                            </div>
+
+                            <div class="col-12 col-lg-6">
+                                <mat-form-field class="w100" appearance="outline">
+                                    <mat-label>Project Description</mat-label>
+                                    <textarea [(ngModel)]="project.projectDescription" 
+                                    name="projectDescription" matInput placeholder="Enter project description" required></textarea>
+                                    <mat-hint>Project Description</mat-hint>
+                                </mat-form-field>
+                            </div>
+
+                            <div class="col-12 col-lg-6">
+                                <mat-form-field class="w100" appearance="outline">
+                                    <mat-label>Start Date</mat-label>
+                                    <input [(ngModel)]="project.startDate" name="startDate"
+                                     type="date" matInput placeholder="Enter project starting date" required>
+                                    <mat-hint>Starting Date</mat-hint>
+                                </mat-form-field>
+                            </div>
+
+                            <div class="col-12 col-lg-6">
+                                <mat-form-field class="w100" appearance="outline">
+                                    <mat-label>End Date</mat-label>
+                                    <input [(ngModel)]="project.endDate" name="endDate" type="date"
+                                     matInput placeholder="Enter project ending date" required>
+                                    <mat-hint>Ending Date</mat-hint>
+                                </mat-form-field>
+                            </div>
+
+                            <div class="col-12">
+                                <button mat-raised-button color="primary" class="mt-2 mx-2" type="submit">Create
+                                    Project</button>
+                                <button mat-raised-button color="basic" class="mt-2 mx-2" type="reset">Reset</button>
+                            </div>
+                        </form>
+                    </mat-card-content>
+                </mat-card>
+            </div>
+
+
+            <!-- This is for project file -->
+            <div class="col-12 col-lg-12 mt-3">
+                <mat-card class="mt-3">
+                    <div class="border-bottom p-2 bg-info-c">
+                        <mat-card-header class="text-white" style="padding: 0; margin: 0;">Add Project Files</mat-card-header>
+                    </div> 
+                    <mat-card-content class="mt-4">
+                        <form class="row g-3" (ngSubmit)="fileSubmit()">
+                            <div class="row">
+                                <div class="col-12 col-lg-6">
+                                    <input (change)="onChange($event)" name="file" class="form-control w-100" type="file" required>
+                                </div>
+                            </div>
+
+                            <div class="col-12 col-lg-12">
+                                <mat-form-field class="w100" appearance="outline">
+                                    <mat-label>File Description</mat-label>
+                                    <textarea [(ngModel)]="projectFile.description" name="description" matInput placeholder="Enter file description" required></textarea>
+                                    <mat-hint>File Description</mat-hint>
+                                </mat-form-field>
+                            </div>
+                            
+
+                            <div class="col-12">
+                                <button mat-raised-button color="primary" class="mt-2 mx-2" type="submit">Add File</button>
+                                <button mat-raised-button color="basic" class="mt-2 mx-2" type="reset">Reset</button>
+                            </div>
+                        </form>
+                    </mat-card-content>
+                </mat-card>
+            </div>
+
+            <!-- This is for grupo members -->
+            <div class="col-12 col-lg-12 mt-3 mb-4">
+                <mat-card class="mt-3">
+                    <div class="border-bottom p-2 bg-info-c">
+                        <mat-card-header class="text-white" style="padding: 0; margin: 0;">Add Group Members</mat-card-header>
+                    </div> 
+                    <mat-card-content class="mt-2">
+                        <form class="row g-3" (ngSubmit)="memeberSubmit()" >
+                            <div class="col-12 col-lg-6">
+                                <mat-form-field class="w100" appearance="outline">
+                                    <mat-label>Student Name</mat-label>
+                                    <input required [(ngModel)]="groupMemeber.memberName" required name="memberName" matInput placeholder="Enter Student Name">
+                                    <mat-hint>Enter name of student</mat-hint>
+                                </mat-form-field>
+                            </div>
+                            <div class="col-12 col-lg-6">
+                                <mat-form-field class="w100" appearance="outline">
+                                    <mat-label>Student Contact</mat-label>
+                                    <input required minlength="10" maxlength="10" [(ngModel)]="groupMemeber.memberContact" required name="memberContact" matInput placeholder="Enter Student Contact">
+                                    <mat-hint>Enter contact of student</mat-hint>
+                                </mat-form-field>
+                            </div>
+                            <div class="col-12 col-lg-6">
+                                <mat-form-field class="w100" appearance="outline">
+                                    <mat-label>PRN Number</mat-label>
+                                    <input required [(ngModel)]="groupMemeber.memberPRNNumber" required name="memberPRNNumber" matInput placeholder="Enter Student PRN">
+                                    <mat-hint>Enter PRN of student</mat-hint>
+                                </mat-form-field>
+                            </div>
+                            <div class="col-12 col-lg-6">
+                                <mat-form-field class="w100" appearance="outline">
+                                    <mat-label>Email ID</mat-label>
+                                    <input required [(ngModel)]="groupMemeber.memberEmail" required name="memberEmail" matInput placeholder="Enter Student Email">
+                                    <mat-hint>Enter email of student</mat-hint>
+                                </mat-form-field>
+                            </div>
+
+                            <div class="col-12">
+                                <button mat-raised-button color="primary" class="mt-2 mx-2" type="submit">Add Student</button>
+                                <button mat-raised-button color="basic" class="mt-2 mx-2" type="reset">Reset</button>
+                            </div>
+                        </form>
+                    </mat-card-content>
+                </mat-card>
+            </div>
+        </div>
+    </div>
+</div>

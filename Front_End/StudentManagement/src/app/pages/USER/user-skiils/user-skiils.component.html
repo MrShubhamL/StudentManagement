@@ -1,0 +1,47 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-12 col-lg-8 offset-lg-2">
+            <mat-card class="mt-4">
+                <mat-card-header>
+                    <p>Add Your Skills</p>
+                </mat-card-header>
+                <mat-card-content>
+                    <form class="row g-2" (ngSubmit)="formSubmit()" >
+                        <div class="col-12 col-lg-12">
+                            <mat-form-field class="w100" appearance="outline">
+                                <mat-label>Select Category</mat-label>
+                                <mat-select [(ngModel)]="skill.category" name="category">
+                                  <mat-option>None</mat-option>
+                                  <mat-option value="Programming">Programming</mat-option>
+                                  <mat-option value="Gamming">Gamming</mat-option>
+                                  <mat-option value="Designing">Designing</mat-option>
+                                  <mat-option value="Singing">Singing</mat-option>
+                                  <mat-option value="Dancing">Dancing</mat-option>
+                                </mat-select>
+                                <mat-hint>Select Your Skill Category</mat-hint>
+                              </mat-form-field>
+                        </div>
+                        <div class="col-12 col-lg-12">
+                            <mat-form-field class="w100" appearance="outline">
+                                <mat-label>Skill</mat-label>
+                                <input [(ngModel)]="skill.skill" name="skill" matInput placeholder="Enter Your Skill">
+                                <mat-hint>Enter Your Skill</mat-hint>
+                            </mat-form-field>
+                        </div>
+                        <div class="col-12 col-lg-12">
+                            <mat-form-field class="w100" appearance="outline">
+                                <mat-label>Description</mat-label>
+                                <textarea [(ngModel)]="skill.description" cols="20" rows="20" name="description" matInput placeholder="Enter description"></textarea>
+                                <mat-hint>Enter skill details</mat-hint>
+                            </mat-form-field>
+                        </div>
+                        <div class="col-12 col-lg-12">
+                            <button mat-raised-button color="primary" type="submit" >ADD</button>
+                            <button mat-raised-button class="mx-2" color="basic" type="reset" >RESET</button>
+                        </div>
+                    </form>
+                </mat-card-content>
+            </mat-card>
+        </div>
+    </div>
+</div>

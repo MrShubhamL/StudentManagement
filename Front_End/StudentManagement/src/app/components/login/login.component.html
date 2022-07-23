@@ -1,0 +1,48 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-12 col-lg-8 offset-lg-2 top-center">
+            <mat-card style="margin: 0; padding: 0;">
+                <div class="row d-flex">
+                    <div class="col-12 col-lg-8 bgImg">
+                        <!-- <img src="../../../assets/img/bg-1.jpg" alt="Loading.." class="img-fluid"> -->
+                        <h3 class="text-center text-white mt-4">Student Management System</h3>
+                        <p class="text-center text-white">Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                            Eveniet officia, eos nostrum expedita alias veritatis vitae tenetur quaerat numquam, quo
+                            atque voluptatum laborum quibusdam. Nulla voluptates ducimus ipsum dolor nobis ad fugit amet
+                            temporibus delectus esse obcaecati officia provident deserunt corrupti harum eveniet non,
+                            repellendus</p>
+                    </div>
+                    <div class="col-12 col-lg-4 p-4 bgColor">
+                        <p class="text-center">Login Now</p>
+                        <form *ngIf="spin==false" class="row " (ngSubmit)="formSubmit()">
+                            <div class="col-12 col-lg-12 m-0 p-0">
+                                <mat-form-field class="w-100" appearance="outline">
+                                    <mat-label>Username</mat-label>
+                                    <input [(ngModel)]="userLogin.username" name="username" type="text" matInput placeholder="Username">
+                                    <!-- <mat-hint>Hint</mat-hint> -->
+                                  </mat-form-field>
+                            </div>
+                            <div class="col-12 col-lg-12 m-0 p-0">
+                                <mat-form-field class="w-100" appearance="outline">
+                                    <mat-label>Password</mat-label>
+                                    <input [(ngModel)]="userLogin.password" name="password" type="password" matInput placeholder="**********">
+                                    <!-- <mat-hint>Hint</mat-hint> -->
+                                  </mat-form-field>
+                            </div>
+                            <div class="col-12 col-lg-12 d-grid m-0 p-0">
+                                <button mat-raised-button color="primary" type="submit" >LOGIN</button>
+                            </div>
+                            <div class="row mt-2" >
+                                <a routerLink="/sign-up" class="nav-link" style="margin: 0; padding: 0;">I don't have account <strong>register now</strong>!!</a>
+                            </div>
+                        </form>
+                        <div *ngIf="spin==true" class="container text-center spinCenter">
+                            <mat-spinner diameter="50" class="container text-center mt-5"></mat-spinner>
+                            <p>Please Wait..</p>
+                        </div>
+                    </div>
+                </div>
+            </mat-card>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,97 @@
+<div class="container-fluid bgImg">
+    <div class="row">
+        <div class="col-12 col-lg-8 offset-lg-2 mt-4">
+            <mat-card class="">
+                <mat-card-header class="text-white text-bold title-center bg-info">Contact Management System (Registration)
+                </mat-card-header>
+                <mat-card-content>
+                    <form (ngSubmit)="formSubmit()"  class="row g-2">
+                        <div class=" col-lg-12 border-bottom">
+                            <p class="text-dark m-p-0">Personal Information</p>
+                        </div>
+                        <div class="col-12 col-lg-4">
+                            <mat-form-field class="w100" appearance="outline">
+                                <mat-label>First Name</mat-label>
+                                <input [(ngModel)]="user.firstName" name="firstName" matInput placeholder="Enter Your First Name">
+                            </mat-form-field>
+                        </div>
+                        <div class="col-12 col-lg-4">
+                            <mat-form-field class="w100" appearance="outline">
+                                <mat-label>Middle Name</mat-label>
+                                <input [(ngModel)]="user.middleName" name="middleName" matInput placeholder="Enter Your Middle Name">
+                            </mat-form-field>
+                        </div>
+                        <div class="col-12 col-lg-4">
+                            <mat-form-field class="w100" appearance="outline">
+                                <mat-label>Last Name</mat-label>
+                                <input [(ngModel)]="user.lastName" name="lastName" matInput placeholder="Enter Your Last Name">
+                            </mat-form-field>
+                        </div>
+                        <div class="col-12 col-lg-4">
+                            <mat-form-field class="w100" appearance="outline">
+                                <mat-label>Select Your Gender</mat-label>
+                                <mat-select [(ngModel)]="user.gender" name="gender">
+                                  <mat-option>None</mat-option>
+                                  <mat-option value="Male">Male</mat-option>
+                                  <mat-option value="Female">Female</mat-option>
+                                </mat-select>
+                              </mat-form-field>
+                        </div>
+                        <div class="col-12 col-lg-4">
+                            <mat-form-field class="w100" appearance="outline">
+                                <mat-label>DOB</mat-label>
+                                <input [(ngModel)]="user.dob" name="dob" type="date" matInput placeholder="Enter Your Birthdate">
+                            </mat-form-field>
+                        </div>
+                        <div class="col-12 col-lg-4">
+                            <mat-form-field class="w100" appearance="outline">
+                                <mat-label>Contact</mat-label>
+                                <input [(ngModel)]="user.contact" name="contact" type="tel" maxlength="10" minlength="10" matInput placeholder="Enter Your Contact">
+                            </mat-form-field>
+                        </div>
+                        <div class="col-12 col-lg-6">
+                            <mat-form-field class="w100" appearance="outline">
+                                <mat-label>Email</mat-label>
+                                <input [(ngModel)]="user.email" name="email" type="email" matInput placeholder="Enter Your Email">
+                            </mat-form-field>
+                        </div>
+                        <div class="col-12 col-lg-6">
+                            <mat-form-field class="w100" appearance="outline">
+                                <mat-label>Address</mat-label>
+                                <input [(ngModel)]="user.address" name="address" type="text" matInput placeholder="Enter Your Address">
+                            </mat-form-field>
+                        </div>
+                        <div class=" col-lg-12 border-bottom">
+                            <p class="text-dark m-p-0">User Information</p>
+                        </div>
+                        <div class="col-12 col-lg-6">
+                            <mat-form-field class="w100" appearance="outline">
+                                <mat-label>Username</mat-label>
+                                <input [(ngModel)]="user.username" name="username" type="text" matInput placeholder="Enter Your Username">
+                                <mat-hint>Please remember entered username!</mat-hint>
+                                <mat-error>asdfsdaf</mat-error>
+                            </mat-form-field>
+                        </div>
+                        <div class="col-12 col-lg-6">
+                            <mat-form-field class="w100" appearance="outline">
+                                <mat-label>Password</mat-label>
+                                <input [(ngModel)]="user.password" name="password" type="password" matInput placeholder="**********">
+                                <mat-hint>Please remember entered password!</mat-hint>
+                            </mat-form-field>
+                        </div>
+                        <div class="col-12 col-lg-12 m-3">
+                            <button type="submit" mat-raised-button color="primary">SIGN-UP</button>
+                            <button class="mx-3" mat-raised-button color="basic" type="reset" >RESET</button>
+                        </div>
+                        <div class="row">
+                            <a routerLink="/" class="nav-link">Already I have a account !!</a>
+                        </div>
+                        <div class="row" *ngIf="spin==true">
+                            <mat-progress-bar mode="indeterminate"></mat-progress-bar>
+                        </div>
+                    </form>
+                </mat-card-content>
+            </mat-card>
+        </div>
+    </div>
+</div>
